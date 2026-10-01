@@ -1,0 +1,65 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Environments / IDE
+.venv/
+venv/
+env/
+.env
+.env.*
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Raw datasets
+data/raw/*
+!data/raw/.gitkeep
+
+# Generated processed data
+data/processed/*
+!data/processed/.gitkeep
+!data/processed/folds.csv
+!data/processed/culture_folds.csv
+
+# Generated experiment outputs
+outputs/
+
+# Large model/data artefacts
+*.pt
+*.pth
+*.ckpt
+*.joblib
+*.npy
+*.npz
+
+# Logs / temporary files
+*.log
+*.tmp
+*.bak
+
+# Release preparation audits
+portability_audit*.txt
+path_dependencies_audit.txt
+longitudinal_paths_audit.txt
+data_inputs_audit.txt
+
+# LaTeX build files
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.lot
+*.out
+*.synctex.gz
+*.toc
+*:Zone.Identifier
+figures/final/alternatives/
