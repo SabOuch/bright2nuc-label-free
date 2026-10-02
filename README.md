@@ -106,12 +106,14 @@ Large checkpoints, cached arrays, embeddings and intermediate predictions are in
 ```text
 .
 ├── .gitignore
+├── CITATION.cff
 ├── LICENSE
 ├── LICENSE_SCOPE.md
 ├── THIRD_PARTY_NOTICES.md
 ├── README.md
 ├── environment.yml
 ├── requirements.txt
+├── run_all.sh
 ├── data/
 │   ├── README.md
 │   ├── processed/
@@ -144,6 +146,8 @@ The frozen culture-wise split definitions are stored under `data/processed/`.
 Small frozen result tables are stored under `results/`, publication-ready scientific figures under `figures/`, and README/report presentation assets under `report/figures/`.
 
 ## Installation
+
+The project was developed and validated under **WSL2 with Ubuntu 24.04** using an **NVIDIA RTX 4080**. The pipeline uses standard Linux paths and tools and can also be executed under native Linux.
 
 The release was tested with:
 
@@ -198,6 +202,30 @@ export BRIGHT2NUC_DATA_ROOT="/path/to/Bright2Nuc_Zenodo_full/extracted"
 If this variable is not set, the longitudinal scripts use `data/raw/` as the default root.
 
 ## Reproduction pipeline
+
+### One-command reproduction
+
+After installing the environment and placing the Bright2Nuc data according to [`data/README.md`](data/README.md), the complete frozen workflow can be launched with:
+
+```bash
+./run_all.sh
+```
+
+To reproduce only the static benchmark and M3 deep ensemble:
+
+```bash
+./run_all.sh --static-only
+```
+
+To inspect the complete command sequence without executing any experiment:
+
+```bash
+./run_all.sh --dry-run
+```
+
+The launcher stops if a command fails. Generated artefacts are written under `outputs/`; tracked frozen release tables and figures are not overwritten automatically.
+
+### Detailed reproduction
 
 Run commands from the repository root after activating the release environment:
 
@@ -424,6 +452,13 @@ Dataset:
 
 > Zenodo DOI: `10.5281/zenodo.7014598`
 
+Software citation metadata are provided in [`CITATION.cff`](CITATION.cff).
+
+## Contributors
+
+- **Sabrine Oucherif**
+- **Salaheddine Sta**
+
 ## Technical report
 
 The standalone project report is available here:
@@ -447,9 +482,9 @@ Third-party datasets, software, pretrained models, and other external resources
 remain subject to their respective original licenses and terms.
 
 The scientific report and presentation assets in `report/`, together with
-generated publication figures in `figures/`, are Copyright © 2026 Sabrine
-Oucherif and are not covered by the repository MIT License unless explicitly
-stated otherwise.
+generated publication figures in `figures/`, are Copyright © 2026
+Sabrine Oucherif and Salaheddine Sta and are not covered by the repository
+MIT License unless explicitly stated otherwise.
 
 Third-party attributions and source links are listed in
 [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md).

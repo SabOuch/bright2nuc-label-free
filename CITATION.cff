@@ -1,0 +1,29 @@
+cff-version: 1.2.0 
+message: "If you use this software, please cite it using the metadata below." 
+ 
+title: "Bright2Nuc — Label-Free Prediction of Differentiation State from Brightfield Microscopy" 
+ 
+type: software 
+ 
+authors: 
+  - family-names: "Oucherif" 
+    given-names: "Sabrine" 
+ 
+  - family-names: "Sta" 
+    given-names: "Salaheddine" 
+ 
+repository-code: "https://github.com/SabOuch/bright2nuc-label-free"
+
+abstract: >
+  Reproducible brightfield-only microscopy pipeline for per-nucleus
+  differentiation-state prediction using culture-wise cross-validation,
+  multitask deep learning, deep ensembles, and uncertainty-aware prediction.
+
+keywords:
+  - computer vision
+  - deep learning
+  - microscopy
+  - brightfield
+  - label-free imaging
+  - uncertainty estimation
+  - biological imaging
