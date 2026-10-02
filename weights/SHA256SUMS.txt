@@ -1,0 +1,5 @@
+5ba22ae955a0a3663ba3ae032b39afc1cfe62868059dfa66d9a5c0a0dd78ab00  bright2nuc-m3-ensemble-fold0.tar.gz
+592833cec1c89f9131b23cc9b341dd688e5f60a0a70609b6b2292c5747f3a84d  bright2nuc-m3-ensemble-fold1.tar.gz
+6c52b26cfb0f8bb42dddcbeccbfbcdeb1f7daa0eb80aa1443dcfd677e304d0a8  bright2nuc-m3-ensemble-fold2.tar.gz
+cd3661e8c062615196115a775ad297233fdb7bf7240ae9ac26a866c9b7943616  bright2nuc-m3-ensemble-fold3.tar.gz
+a56e9cc40fc062e06f63f4332eaebbd72124b47912b916c0e72269f2db0aeef7  bright2nuc-m3-ensemble-fold4.tar.gz

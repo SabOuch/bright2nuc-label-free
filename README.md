@@ -15,6 +15,7 @@
 [Technical report](report/Bright2Nuc_Final_Report.pdf) ·
 [Data instructions](data/README.md) ·
 [Frozen results](results/) ·
+[Model weights & inference](weights/README.md) ·
 [Reproduction pipeline](#reproduction-pipeline)
 
 </div>
@@ -131,8 +132,13 @@ Large checkpoints, cached arrays, embeddings and intermediate predictions are in
 │       ├── longitudinal_delta_from_day00_m1_m4.png
 │       └── longitudinal_confounders_D01_D00.png
 ├── results/
+├── weights/
+│   ├── README.md
+│   └── SHA256SUMS.txt
 └── scripts/
     ├── data/
+    ├── demo/
+    │   └── 80_predict_m3_fold_ensemble.py
     ├── evaluation/
     ├── figures/
     ├── longitudinal/
@@ -241,6 +247,26 @@ The scripts derive the repository root from their own location, so the clone doe
 M1, M2 and M3 use ImageNet-pretrained backbones through `timm`, while M4 uses the pretrained DINOv2 model `vit_small_patch14_dinov2.lvd142m`.
 
 On a fresh machine, the first execution may therefore require network access to retrieve pretrained weights, unless the corresponding weights are already present in the local cache. Third-party pretrained weights are not redistributed by this repository and remain subject to their original licenses and terms.
+
+### Released M3 ensemble weights and inference demo
+
+The evaluated M3 deep-ensemble checkpoints are distributed separately from the Git repository because of their size. See [`weights/README.md`](weights/README.md) for the archive structure, checksum information, input contract, and inference instructions.
+
+For one outer fold, inference can be run with:
+
+```bash
+python scripts/demo/80_predict_m3_fold_ensemble.py \
+    --input crops.npy \
+    --weights /path/to/extracted/weights \
+    --fold 0 \
+    --output predictions.csv
+```
+
+The demo accepts per-nucleus brightfield crops with shape `(16, 64, 64)` or `(N, 16, 64, 64)` stored as `uint8`. It reproduces the five-seed M3 ensemble for the selected outer fold and returns the five member predictions, the ensemble mean differentiation score, and the sample standard deviation across members as an uncertainty signal.
+
+The released inference implementation was numerically checked against the frozen historical fold-0 predictions on 64 nuclei. The maximum absolute difference for the ensemble mean was approximately `2.45e-05`.
+
+These checkpoints reproduce the evaluated five-fold out-of-fold system. They should not be interpreted as a separately trained prospective deployment model.
 
 ### 1. Data validation and preprocessing
 
@@ -439,7 +465,7 @@ The scripts do **not** automatically overwrite the tracked frozen tables and fig
 - The final ensemble contains five seeds per fold and 25 logical models in total.
 - The longitudinal common support contains 88,458 observations from six cultures over Day00, Day01 and Day02.
 - Final reported values come from the audited frozen evaluation outputs included in this release.
-- Exact historical model parameters are not version-controlled; retraining reconstructs the experimental procedure, but bitwise-identical weights are not guaranteed across hardware, CUDA or library implementations.
+- Exact historical model parameters are not stored in Git because of their size; the evaluated M3 ensemble checkpoints are distributed separately as release assets. Retraining reconstructs the experimental procedure, but bitwise-identical weights are not guaranteed across hardware, CUDA or library implementations.
 
 ## Reference
 
