@@ -66,3 +66,15 @@ for the ensemble mean was approximately `2.45e-05`.
 These checkpoints reproduce the evaluated five-fold out-of-fold system.
 They should not be interpreted as a separately trained prospective deployment
 model.
+
+
+## Dataset attribution
+
+The checkpoints were trained using the Bright2Nuc dataset:
+
+- Original study: *Bright2Nuc*
+- Dataset DOI: `10.5281/zenodo.7014598`
+- Dataset license: Creative Commons Attribution 4.0 International (CC BY 4.0)
+- Original code repository: https://github.com/marrlab/Bright2Nuc
+
+The original dataset is not redistributed with these checkpoint archives.
