@@ -31,7 +31,7 @@ fold-specific brightfield normalization statistics used during training.
 After extracting the archive corresponding to the desired outer fold:
 
 ```bash
-python scripts/demo/80_predict_m3_fold_ensemble.py \
+python scripts/demo/predict_m3_ensemble.py \
     --input crops.npy \
     --weights /path/to/extracted/weights \
     --fold 0 \

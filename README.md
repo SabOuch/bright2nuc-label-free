@@ -138,7 +138,7 @@ Large checkpoints, cached arrays, embeddings and intermediate predictions are in
 └── scripts/
     ├── data/
     ├── demo/
-    │   └── 80_predict_m3_fold_ensemble.py
+    │   └── predict_m3_ensemble.py
     ├── evaluation/
     ├── figures/
     ├── longitudinal/
@@ -255,7 +255,7 @@ The evaluated M3 deep-ensemble checkpoints are distributed separately from the G
 For one outer fold, inference can be run with:
 
 ```bash
-python scripts/demo/80_predict_m3_fold_ensemble.py \
+python scripts/demo/predict_m3_ensemble.py \
     --input crops.npy \
     --weights /path/to/extracted/weights \
     --fold 0 \
