@@ -32,7 +32,7 @@ After extracting the archive corresponding to the desired outer fold:
 
 ```bash
 python scripts/demo/predict_m3_ensemble.py \
-    --input crops.npy \
+    --input demo/bright2nuc_fold0_test.npy \
     --weights /path/to/extracted/weights \
     --fold 0 \
     --output predictions.csv

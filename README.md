@@ -176,7 +176,7 @@ The installation was validated from a clean Conda environment with CUDA successf
 
 ## Data
 
-The dataset is not redistributed in this repository.
+The complete Bright2Nuc dataset is not redistributed in this repository. A small inference demo subset containing 64 per-nucleus brightfield crops is provided under `demo/` for reproducibility.
 
 Original Bright2Nuc resources:
 
@@ -256,7 +256,7 @@ For one outer fold, inference can be run with:
 
 ```bash
 python scripts/demo/predict_m3_ensemble.py \
-    --input crops.npy \
+    --input demo/bright2nuc_fold0_test.npy \
     --weights /path/to/extracted/weights \
     --fold 0 \
     --output predictions.csv
@@ -503,7 +503,7 @@ The experimental results in this repository are frozen. The release focuses on r
 The source code developed in this repository is released under the MIT License.
 See [`LICENSE`](LICENSE) and [`LICENSE_SCOPE.md`](LICENSE_SCOPE.md).
 
-The original Bright2Nuc dataset is not redistributed by this repository.
+The complete original Bright2Nuc dataset is not redistributed by this repository. A small CC BY 4.0 demo subset containing 64 per-nucleus brightfield crops is included under `demo/` for reproducible inference.
 Third-party datasets, software, pretrained models, and other external resources
 remain subject to their respective original licenses and terms.
 
