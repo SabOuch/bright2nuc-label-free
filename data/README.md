@@ -1,6 +1,8 @@
 # Bright2Nuc data
 
-The datasets used by this repository are not redistributed here.
+The complete datasets used by this repository are not redistributed here.
+
+A small inference demo subset is provided separately under the repository-root `demo/` directory.
 
 The static prediction pipeline uses data derived from the Bright2Nuc dataset. The original dataset and associated resources should be obtained from the official public source:
 

@@ -24,7 +24,7 @@
 
 This repository contains the reproducible experimental pipeline developed for the **Bright2Nuc / AI4S label-free prediction task**.
 
-The objective is to predict a **per-nucleus differentiation label from brightfield microscopy only**. Fluorescence-derived information is used only as supervision during training or evaluation and is **never used as model input at inference time**.
+The objective is to predict a **per-nucleus differentiation score from brightfield microscopy only**. Fluorescence-derived information is used only as supervision during training or evaluation and is **never used as model input at inference time**.
 
 <p align="center">
   <img src="report/figures/final_pipeline_publication.png" width="1000" alt="Bright2Nuc final brightfield-only prediction pipeline">
@@ -119,6 +119,9 @@ Large checkpoints, cached arrays, embeddings and intermediate predictions are in
 │   ├── README.md
 │   ├── processed/
 │   └── raw/
+├── demo/
+│   ├── README.md
+│   └── bright2nuc_fold0_test.npy
 ├── figures/
 │   ├── final/
 │   └── longitudinal/
@@ -237,7 +240,7 @@ Run commands from the repository root after activating the release environment:
 
 ```bash
 conda activate bright2nuc
-cd /path/to/AI4S_release
+cd /path/to/bright2nuc-label-free
 ```
 
 The scripts derive the repository root from their own location, so the clone does not need to live in a specific home directory.
